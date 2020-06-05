@@ -1,0 +1,19 @@
+<div *ngIf="persona">
+	<h2 *ngIf="persona._id">Detalles de {{persona.nombre | uppercase}}</h2>
+	<h2 *ngIf="!persona._id">Nueva persona</h2>
+	<div *ngIf="persona._id"><span>Id: </span>{{persona._id}}</div>
+	<div>
+		<label>Nombre:
+			<input [(ngModel)]="persona.nombre" placeholder="Nombre"/>
+		</label>
+	</div>
+</div>
+<div *ngIf="cargando">
+  <p>
+    Cargando...
+  </p>
+</div>
+<div *ngIf="persona">
+	<button (click)="volver()">Volver</button>
+	<button (click)="guardarPersona()">Guardar</button>
+</div>
